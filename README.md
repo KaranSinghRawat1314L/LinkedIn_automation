@@ -210,5 +210,5 @@ This repository is provided strictly for educational and technical evaluation pu
 Automating LinkedIn or similar platforms may violate their Terms of Service.
 Do not use this code on real accounts.
 
-##📄 License
+## 📄 License
 MIT — Educational Use Only
