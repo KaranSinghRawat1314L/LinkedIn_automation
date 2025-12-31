@@ -4,24 +4,29 @@
     "https://linkedin.com/in/fake-user-2",
     "https://linkedin.com/in/fake-user-3",
     "https://linkedin.com/in/fake-user-4",
-    "https://linkedin.com/in/fake-user-5"
+    "https://linkedin.com/in/fake-user-5",
+    "https://linkedin.com/in/fake-user-6",
+    "https://linkedin.com/in/fake-user-7",
+    "https://linkedin.com/in/fake-user-8",
+    "https://linkedin.com/in/fake-user-9",
+    "https://linkedin.com/in/fake-user-10",
+    "https://linkedin.com/in/fake-user-11",
+    "https://linkedin.com/in/fake-user-12",
+    "https://linkedin.com/in/fake-user-13",
+    "https://linkedin.com/in/fake-user-14",
+    "https://linkedin.com/in/fake-user-15",
+    "https://linkedin.com/in/fake-user-16",
+    "https://linkedin.com/in/fake-user-17",
+    "https://linkedin.com/in/fake-user-18",
+    "https://linkedin.com/in/fake-user-19",
+    "https://linkedin.com/in/fake-user-20"
   ],
-  "sentInvites": [
-    "https://linkedin.com/in/fake-user-1",
-    "https://linkedin.com/in/fake-user-2",
-    "https://linkedin.com/in/fake-user-3"
-  ],
-  "sentMessages": [
-    "https://linkedin.com/in/fake-user-1",
-    "https://linkedin.com/in/fake-user-2",
-    "https://linkedin.com/in/fake-user-3"
-  ],
+  "sentInvites": [],
+  "sentMessages": [],
   "timestamps": {},
   "dailyCounts": {
-    "connections": 3,
-    "messages": 3
+    "connections": 0,
+    "messages": 0
   },
-  "lastSearchPages": {
-    "software engineer_India": 1
-  }
+  "lastSearchPages": {}
 }

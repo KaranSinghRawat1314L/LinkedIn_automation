@@ -54,7 +54,7 @@ function pickTemplate(bucket) {
  * @param {string} profile.profileUrl
  * @param {number} profile.score
  * @param {string} [profile.name]
- * @param {string} [profile.role]
+ * @param {string} [profile.role] 
  *
  * @returns {Object} message payload
  */
