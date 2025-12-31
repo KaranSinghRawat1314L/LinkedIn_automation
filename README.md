@@ -1,152 +1,215 @@
-# LinkedIn Automation (Simulation-Safe)
+# LinkedIn Automation — Simulation-First Stealth Automation POC
 
-**Project Overview:**  
-This project demonstrates a **simulation-safe LinkedIn automation pipeline**. It evaluates profiles, generates connection messages, and simulates human-like interactions while **avoiding any real account actions**. Ideal for demonstrating automation skills in a safe environment.
+## 📖 Overview
+This repository demonstrates **advanced browser automation architecture**, **human-like behavior modeling**, and **anti-detection strategies** in a **simulation-first environment**.
 
----
+> **⚠️ Educational Proof-of-Concept Only**  
+> Live automation is **intentionally disabled** to prevent misuse and Terms of Service violations. This project exists solely to showcase automation engineering patterns and stealth techniques.
 
-## Features
+The system focuses on:
+- **Clean, modular automation architecture**
+- **Human-like behavior simulation** (timing, motion, interaction)
+- **Stealth-aware design choices**
+- **Deterministic state tracking** and decision-making
+- **Safe-by-default execution** via simulation mode
 
-- **Profile Evaluation:** Scores profiles based on simulated relevance.
-- **Decision Engine:** Determines actions like visit, connect, or message.
-- **Human-Like Interaction:** Simulates realistic delays and behavior patterns.
-- **Messaging Simulation:** Drafts personalized messages for connections.
-- **Session Handling:** Simulated login/session management.
-- **Safe Simulation Mode:** Can run without risking actual LinkedIn accounts.
+## 🏗️ High-Level Architecture
+┌──────────────────────┐
+│ index.js             │
+│ (Orchestrator)       │
+└─────────┬────────────┘
+│
+▼
+┌──────────────────────────────┐
+│ Config Layer                 │
+│ - env validation             │
+│ - mode enforcement           │
+└─────────┬────────────────────┘
+│
+▼
+┌──────────────────────────────┐
+│ Browser / Session            │
+│ - Playwright Chromium        │
+│ - Cookie persistence         │
+│ - Login & checkpoint detect  │
+└─────────┬────────────────────┘
+│
+▼
+┌──────────────────────────────┐
+│ Search Pipeline              │
+│ - Keyword-based search       │
+│ - Pagination handling        │
+│ - Deduplication              │
+└─────────┬────────────────────┘
+│
+▼
+┌──────────────────────────────┐
+│ Profile Evaluation Engine    │
+│ - Relevance scoring          │
+│ - Simulation-safe fallback   │
+└─────────┬────────────────────┘
+│
+▼
+┌──────────────────────────────┐
+│ Decision Engine              │
+│ - Rule-based actions         │
+│ - Rate & state aware         │
+└─────────┬────────────────────┘
+│
+▼
+┌──────────────────────────────┐
+│ Action Executor              │
+│ - Safety gate                │
+│ - Simulation-only actions    │
+└─────────┬────────────────────┘
+│
+▼
+┌──────────────────────────────┐
+│ State Layer                  │
+│ - Visited profiles           │
+│ - Invites & messages         │
+│ - Daily limits               │
+└──────────────────────────────┘
 
----
 
-## Folder Structure
+## 🚀 Execution Modes
 
-linkedin-automation/
-├── src/
-│ ├── action/
-│ │ └── index.js
-│ ├── auth/
-│ │ └── checkpoint.js
-│ ├── browser/
-│ │ └── index.js
-│ ├── config/
-│ │ └── index.js
-│ ├── decision/
-│ │ ├── constant.js
-│ │ ├── index.js
-│ │ └── rules.js
-│ ├── linkedIn/
-│ │ ├── connect.js
-│ │ ├── human.js
-│ │ ├── message.js
-│ │ ├── search.js
-│ │ ├── profileEvaluation.js
-│ │ └── visit.js
-│ ├── logger/
-│ │ └── index.js
-│ ├── messaging/
-│ │ └── messageGenerator.js
-│ ├── session/
-│ │ ├── index.js
-│ │ └── cookies/
-│ ├── state/
-│ │ ├── index.js
-│ │ ├── constant.js
-│ │ └── storage.js
-│ └── index.js
-├── storage/
-│ ├── session.json
-│ └── state.json
-├── .env
-├── .gitignore
-├── package.json
-└── README.md
+### **Simulation Mode (Default)**
+- No real clicks or messages
+- Browser opens briefly for realism
+- Actions are logged and persisted to state
+- Fully safe and deterministic
+- `MODE=simulation`
 
-yaml
-Copy code
+### **Live Mode**
+**Live execution is explicitly blocked by design.**
+Error: Live mode is intentionally disabled in this POC
 
----
+This constraint enforces ethical use and prevents accidental misuse.
 
-## Setup Instructions
+## 🕵️ Implemented Stealth Techniques
 
-1. **Clone the repository**
+### ✅ Mandatory Techniques
+1. **Human-like Mouse Movement**
+   - Overshoot-based cursor targeting
+   - Micro-corrections before final hover
+   - Variable step counts and speed
+   - No straight-line movement
+   - *Implemented in:* `src/linkedin/human.js`
 
-```bash
-git clone <repo-url>
-cd linkedin-automation
-Install dependencies
+2. **Randomized Timing Patterns**
+   - Think-time delays before actions
+   - Variable interaction pauses
+   - Cognitive pauses between decisions
+   - *Implemented via `humanDelay()` across pipeline*
 
-bash
-Copy code
-npm install
-Configure environment variables
+3. **Browser Fingerprint Masking (Partial)**
+   - Custom user agent
+   - Controlled viewport dimensions
+   - Non-headless Chromium
+   - *Implemented in:* `src/browser/index.js`
+   - *Note:* Low-level fingerprint spoofing is intentionally excluded
 
-Create a .env file in the root:
+### ✅ Additional Stealth Techniques
+4. **Randomized Scrolling Behavior**
+   - Variable scroll distance
+   - Multi-step scroll sequences
+   - Natural pauses between scrolls
 
-ini
-Copy code
-LINKEDIN_USERNAME=your_username
-LINKEDIN_PASSWORD=your_password
-SIMULATION_MODE=true
-⚠️ This project runs safely in simulation mode by default.
+5. **Realistic Typing Simulation**
+   - Variable keystroke delays
+   - Random typos with backspace correction
+   - Human-like typing rhythm
 
-Run the project
+6. **Mouse Hover Simulation**
+   - Intentional hover before actions
+   - Cursor wandering behavior
+   - Element-centric motion patterns
 
-bash
-Copy code
-npm start
-How It Works
-Launches a browser in simulation mode.
+7. **Rate Limiting & Daily Quotas**
+   - Connection & message caps
+   - State-backed enforcement
+   - Cooldown-aware decisions
 
-Loads fake LinkedIn profiles from src/profiles or generates them dynamically.
+8. **Security Checkpoint Handling**
+   - CAPTCHA / 2FA detection
+   - Manual intervention support
+   - Execution pause and resume
 
-Runs profile evaluation scoring each profile based on simulated relevance.
+## ✨ Core Features
 
-Decision engine determines whether to visit, connect, or send a message.
+### **Authentication & Session Handling**
+- Environment-based credentials
+- Cookie persistence
+- Session restoration
+- Graceful login retries
 
-Drafts messages using messaging/messageGenerator.js.
+### **Search & Targeting**
+- Keyword + location search
+- Pagination traversal
+- Duplicate profile detection
 
-Logs all actions in a structured format using logger.
+### **Decision Engine**
+- Rule-based, deterministic decisions
+- State-aware action eligibility
+- Clear separation of logic and execution
 
-✅ Everything runs in simulation—no real LinkedIn accounts are impacted.
+### **Action Execution**
+- Safety-gated execution layer
+- Simulation-only behavior
+- Idempotent state updates
 
-Demo Output (Simulation)
-json
-Copy code
-[
-  {
-    "profileUrl": "https://linkedin.com/in/fake-user-3",
-    "score": 5,
-    "relevance": "MEDIUM_RELEVANCE",
-    "message": "Hi there, I came across your profile and thought it would be great to connect."
-  },
-  {
-    "profileUrl": "https://linkedin.com/in/fake-user-1",
-    "score": 2,
-    "relevance": "LOW_RELEVANCE",
-    "message": "Hi there, hope you’re doing well. Sending a quick connection request."
-  }
-]
-Notes for Video Demo
-Start with your face on camera, introduce the project purpose.
+### **State Persistence**
+- Visited profiles
+- Sent invites
+- Sent messages
+- Daily counters
 
-Switch to screen recording to show simulation logs.
+## 📁 Folder Structure
+src/
+├── actions/ # Action execution (safety-gated)
+├── auth/ # Security checkpoint handling
+├── browser/ # Playwright browser setup
+├── config/ # Environment-driven config
+├── decision/ # Rule-based decision engine
+├── linkedin/ # Human behavior + LinkedIn flows
+├── logger/ # Structured logging (pino)
+├── session/ # Cookie/session persistence
+├── state/ # In-memory state & limits
+└── index.js # Main orchestrator
 
-Highlight:
 
-Modular architecture
+## ⚙️ Configuration
+Copy `.env.example` to `.env`:
+```env
+MODE=simulation
+LOG_LEVEL=info
 
-Human-like interactions
+LINKEDIN_EMAIL=
+LINKEDIN_PASSWORD=
+LINKEDIN_AUTH_STRATEGY=session
+```
+## 📝 Logging
 
-Message drafting
+- Structured JSON logs via pino
+- Configurable log level
+- Contextual metadata on every action
+- Fatal crash protection at entrypoint
 
-Decision engine flow
+## 🔒 Safety & Ethics
 
-End with the simulation output and ranking of profiles.
+- Live automation disabled by default and by validation
+- No background execution
+- No silent retries
+- No obfuscation for misuse
 
-Future Improvements
-Integrate real LinkedIn API safely (with throttling and anti-detection mechanisms).
+This project prioritizes demonstration of engineering patterns over operational capability.
 
-Enhance decision engine using ML-based profile scoring.
+## ⚠️ Disclaimer
 
-Add logging & analytics dashboards for better insights.
+This repository is provided strictly for educational and technical evaluation purposes.
+Automating LinkedIn or similar platforms may violate their Terms of Service.
+Do not use this code on real accounts.
 
-License
-MIT License. Educational/demo purposes only.
+##📄 License
+MIT — Educational Use Only
