@@ -1,0 +1,22 @@
+[
+  {
+    "name": "lang",
+    "value": "v=1342&lang=en-us",
+    "domain": ".linkedin.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "bcookie",
+    "value": "\"v=2&3aabfd1fdc-5750-4v32-8258-c0cfb462a90c\"",
+    "domain": ".linkedin.com",
+    "path": "/",
+    "expires": 1798552825.883717,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  }
+]

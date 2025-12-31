@@ -1,0 +1,27 @@
+{
+  "visitedProfiles": [
+    "https://linkedin.com/in/fake-user-1",
+    "https://linkedin.com/in/fake-user-2",
+    "https://linkedin.com/in/fake-user-3",
+    "https://linkedin.com/in/fake-user-4",
+    "https://linkedin.com/in/fake-user-5"
+  ],
+  "sentInvites": [
+    "https://linkedin.com/in/fake-user-1",
+    "https://linkedin.com/in/fake-user-2",
+    "https://linkedin.com/in/fake-user-3"
+  ],
+  "sentMessages": [
+    "https://linkedin.com/in/fake-user-1",
+    "https://linkedin.com/in/fake-user-2",
+    "https://linkedin.com/in/fake-user-3"
+  ],
+  "timestamps": {},
+  "dailyCounts": {
+    "connections": 3,
+    "messages": 3
+  },
+  "lastSearchPages": {
+    "software engineer_India": 1
+  }
+}
