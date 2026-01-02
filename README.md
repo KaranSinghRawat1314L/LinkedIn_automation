@@ -70,7 +70,6 @@ The system focuses on:
 │  - Invites & messages        │
 │  - Daily limits              │
 └──────────────────────────────┘
-
 ## 🚀 Execution Modes
 
 ### **Simulation Mode (Default)**
@@ -166,16 +165,16 @@ This constraint enforces ethical use and prevents accidental misuse.
 
 ## 📁 Folder Structure
 src/
-├── actions/ # Action execution (safety-gated)
-├── auth/ # Security checkpoint handling
-├── browser/ # Playwright browser setup
-├── config/ # Environment-driven config
-├── decision/ # Rule-based decision engine
-├── linkedin/ # Human behavior + LinkedIn flows
-├── logger/ # Structured logging (pino)
-├── session/ # Cookie/session persistence
-├── state/ # In-memory state & limits
-└── index.js # Main orchestrator
+├── actions/      # Action execution (safety-gated)
+├── auth/         # Security checkpoint handling
+├── browser/      # Playwright browser setup
+├── config/       # Environment-driven config
+├── decision/     # Rule-based decision engine
+├── linkedin/     # Human behavior + LinkedIn flows
+├── logger/       # Structured logging (pino)
+├── session/      # Cookie/session persistence
+├── state/        # In-memory state & limits
+└── index.js      # Main orchestrator
 
 
 ## ⚙️ Configuration
